@@ -105,10 +105,10 @@ class BotonNi extends StatelessWidget {
      style:  ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                 shape: RoundedRectangleBorder(
-                side: mySide,
-                  borderRadius: BorderRadius.circular(8.0), // Bordes redondeados
+                 side: mySide, 
+                borderRadius: BorderRadius.circular(8.0), // Bordes redondeados
                 ),
-                primary: Color.fromRGBO(86, 72, 181, 1, ), // Color de fondo morado
+                backgroundColor:  Color.fromRGBO(86, 72, 181, 1, ), // Color de fondo morado
               ),
      onPressed: (){}, child:Text("Ingresar ",style: TextStyle( fontWeight: FontWeight.w500, color: Colors.white),));
   }
