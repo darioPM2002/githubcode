@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_manager/Domain/dataFunctions/isar_functions.dart';
+import 'package:shop_manager/Domain/datasources/dio_peticiones.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -110,7 +112,11 @@ class BotonNi extends StatelessWidget {
                 ),
                 backgroundColor:  Color.fromRGBO(86, 72, 181, 1, ), // Color de fondo morado
               ),
-     onPressed: (){}, child:Text("Ingresar ",style: TextStyle( fontWeight: FontWeight.w500, color: Colors.white),));
+     onPressed: (){
+      descargarProducts();
+      getHttp();
+
+     }, child:Text("Ingresar ",style: TextStyle( fontWeight: FontWeight.w500, color: Colors.white),));
   }
 }
 //Container(width: 100, height: 100, color: Colors.red,)

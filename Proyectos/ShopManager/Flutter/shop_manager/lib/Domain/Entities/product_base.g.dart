@@ -103,14 +103,14 @@ ProductBase _productBaseDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = ProductBase(
-    reader.readDoubleList(offsets[4]) ?? [],
     description: reader.readString(offsets[0]),
+    isarId: id,
     name: reader.readString(offsets[1]),
     originProduct: reader.readString(offsets[2]),
     priceName: reader.readStringList(offsets[3]) ?? [],
+    prices: reader.readDoubleList(offsets[4]) ?? [],
     typeProduct: reader.readLong(offsets[5]),
   );
-  object.isarId = id;
   return object;
 }
 
@@ -147,9 +147,7 @@ List<IsarLinkBase<dynamic>> _productBaseGetLinks(ProductBase object) {
 }
 
 void _productBaseAttach(
-    IsarCollection<dynamic> col, Id id, ProductBase object) {
-  object.isarId = id;
-}
+    IsarCollection<dynamic> col, Id id, ProductBase object) {}
 
 extension ProductBaseQueryWhereSort
     on QueryBuilder<ProductBase, ProductBase, QWhere> {
